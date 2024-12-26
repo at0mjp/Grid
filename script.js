@@ -77,7 +77,7 @@ startButton.addEventListener('click', () => {
     // Reset the timer before starting the algorithm
     startTime = Date.now();
     if (timerInterval) clearInterval(timerInterval);  // Clear any existing intervals
-    timerInterval = setInterval(updateTimer, 100);  // Update the timer every 100 ms
+    timerInterval = setInterval(updateTimer, 10);  // Update the timer every 10 ms
 
     const selectedAlgorithm = document.getElementById('algorithm-dropdown').value;
     if (selectedAlgorithm === 'dijkstra') {
@@ -96,8 +96,8 @@ algorithmDropdown.addEventListener('change', (event) => {
 
 // Timer update function
 function updateTimer() {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000);  // Time in seconds
-    timerDisplay.textContent = `Time: ${elapsed}s`;
+    const elapsed = Date.now() - startTime;  // Time in milliseconds
+    timerDisplay.textContent = `Time: ${elapsed} ms`;  // Display time in ms
 }
 
 // Dijkstra's Algorithm
@@ -213,8 +213,8 @@ function drawPath(path) {
     // Stop the timer once the pathfinding is complete
     if (timerInterval) {
         clearInterval(timerInterval);
-        const elapsed = Math.floor((Date.now() - startTime) / 1000);  // Time in seconds
-        timerDisplay.textContent = `Completed in ${elapsed}ms`;
+        const elapsed = Date.now() - startTime;  // Time in milliseconds
+        timerDisplay.textContent = `Completed in ${elapsed} ms`;
     }
 }
 
@@ -232,5 +232,5 @@ resetButton.addEventListener('click', () => {
     // Clear green and red cell references
     greenCell = null;
     redCell = null;
-    timerDisplay.textContent = 'Time: 0ms';  // Reset the timer display
+    timerDisplay.textContent = 'Time: 0 ms';  // Reset the timer display
 });
