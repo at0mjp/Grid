@@ -1,23 +1,79 @@
+/* Timer display styling */
+.timer-display {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; /* Space between timer and controls */
+    text-align: center;
+}
+
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: center;  /* Horizontally center everything */
+    align-items: flex-start;  /* Align items to the top */
+    height: 100vh;  /* Full viewport height */
     background-color: #f4f4f4;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr); /* 10 columns */
-    grid-template-rows: repeat(10, 1fr); /* 10 rows */
-    gap: 1px; /* Space between cells */
-    width: 500px; /* Grid width */
-    height: 500px; /* Grid height */
+/* Container for the controls (Start button and Dropdown) */
+.controls-container {
+    margin:auto;
+    justify-content: center; /* Space the button and dropdown on the left and right */
+    width: 100%;
+    max-width: 900px; /* Limit the width of the controls container */
+    margin-bottom: 20px; /* Space between controls and grid */
+    padding: 0 20px; /* Padding around the container */
 }
 
+/* Start button styles */
+.start-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Start button styles */
+.reset-button {
+    padding: 10px 20px;
+    background-color: #da2a2a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.start-button:hover {
+    background-color: #45a049;
+}
+
+/* Dropdown menu styles */
+.algorithm-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Grid container styles */
+.grid-container {
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(20, 1fr); /* 20 columns */
+    grid-template-rows: repeat(20, 1fr); /* 20 rows */
+    gap: 1px; /* Space between cells */
+    width: 800px; /* Fixed grid width */
+    height: 800px; /* Fixed grid height */
+}
+
+/* Styling for grid cells */
 .grid-item {
     background-color: lightgrey;
     border: 1px solid black; /* Black border for gridlines */

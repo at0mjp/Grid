@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10x10 Grid</title>
+    <title>Pathfinding Grid</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="grid-container" id="grid-container"></div>
+    <!-- Container for the UI controls (Start button and Dropdown) -->
+    <div class="controls-container">
+        <!-- Start Button -->
+        <button id="start-button" class="start-button">Start</button>
+        
+        <!-- Reset Button -->
+        <button id="reset-button" class="reset-button">Reset</button>
+        
+        <!-- Dropdown Menu -->
+        <select id="algorithm-dropdown" class="algorithm-dropdown">
+            <option value="dijkstra">Dijkstra's Algorithm</option>
+            <option value="a-star">A* Shortest Path Algorithm</option>
+        </select>
+    </div>
+    
+    <!-- Grid Container -->
+    <div id="grid-container" class="grid-container"></div>
+
+    <!-- Timer Display -->
+    <div id="timer" class="timer-display">
+        Time: 0ms
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
